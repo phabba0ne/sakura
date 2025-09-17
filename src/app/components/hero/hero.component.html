@@ -1,3 +1,10 @@
-<section class="hero">
-  <div class="hero__content">Hero works</div>
+<section
+  class="hero-section"
+  [style.background-image]="'url(' + backgroundImage() + ')'"
+>
+  <div class="content">
+    <img [src]="logo()" alt="Sakura Ramen Logo" class="hero-logo" />
+    <h1>{{ title() }}</h1>
+    <span>{{ subtitle() }}</span>
+  </div>
 </section>

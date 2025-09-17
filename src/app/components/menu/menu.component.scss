@@ -1,0 +1,204 @@
+@use "../../shared/styles/variables" as *;
+@use "../../shared/styles/mixins" as *;
+@use "sass:map";
+
+:host {
+  .menu-section {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("/assets/images/section_our_menu_bg.jpg") center/cover no-repeat;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        ellipse at center,
+        transparent 30%,
+        rgba(0, 0, 0, 0.3) 70%
+      );
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      @include flex-center(column);
+      gap: map.get($spacing, "huge");
+      padding: map.get($spacing, "huge") 0;
+
+      @include respond-to("tablet") {
+        gap: map.get($spacing, "lg");
+        padding: map.get($spacing, "xxxl") 0;
+      }
+
+      @include respond-to("mobile-xs") {
+        padding: 72px 0;
+      }
+
+      h2 {
+        position: relative;
+        color: $white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -#{map.get($spacing, "sm")};
+          left: 50%;
+          width: 60px;
+          height: 4px;
+          background: $white;
+          transform: translateX(-50%);
+          border-radius: 2px;
+        }
+      }
+
+      .menu-item {
+        @include flex-center(row, flex-start, center);
+        gap: clamp(#{map.get($spacing, "md")}, 8vw, 80px);
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 24px;
+        padding: map.get($spacing, "xxl");
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+        max-width: 1200px;
+        width: 100%;
+
+        @include respond-to("tablet") {
+          gap: map.get($spacing, "md");
+          padding: map.get($spacing, "lg");
+        }
+
+        @include respond-to("mobile-xs") {
+          @include flex-center(column);
+          gap: map.get($spacing, "lg");
+          text-align: center;
+        }
+
+        img {
+          width: 343px;
+          height: 343px;
+          border-radius: 20px;
+          object-fit: cover;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease;
+
+          @include respond-to("tablet") {
+            width: 300px;
+            height: 300px;
+          }
+          @include respond-to("tablet-sm") {
+            width: 250px;
+            height: 250px;
+          }
+          @include respond-to("mobile-lg") {
+            width: 200px;
+            height: 200px;
+          }
+          @include respond-to("mobile") {
+            width: 180px;
+            height: 180px;
+          }
+          @include respond-to("mobile-xs") {
+            width: 100%;
+            max-width: 340px;
+            height: 340px;
+          }
+        }
+
+        &:hover img {
+          transform: scale(1.05);
+        }
+
+        .menu-details {
+          flex: 1;
+
+          @include respond-to("tablet") {
+            transform: scale(0.8);
+            transform-origin: left center;
+          }
+
+          @include respond-to("mobile-xs") {
+            transform: none;
+          }
+
+          table {
+            width: 100%;
+            border-spacing: 0;
+
+            th {
+              @include font-style($font-economica, 700, 56px, $text-dark);
+              text-align: left;
+              padding-bottom: map.get($spacing, "md");
+              border-bottom: 3px solid $primary-red;
+
+              @include respond-to("desktop-md") {
+                font-size: 42px;
+              }
+              @include respond-to("tablet") {
+                font-size: 36px;
+              }
+              @include respond-to("mobile-xs") {
+                text-align: center;
+                font-size: 40px;
+              }
+            }
+
+            tr {
+              border-bottom: 1px solid rgba($text-medium, 0.2);
+
+              &:last-child {
+                border-bottom: none;
+              }
+
+              td {
+                padding: map.get($spacing, "sm") 0;
+
+                span {
+                  @include font-style($font-raleway, bold, 32px, $text-medium);
+
+                  @include respond-to("tablet") {
+                    font-size: 24px;
+                  }
+                }
+
+                &:first-child span {
+                  color: $text-dark;
+                }
+
+                &:last-child {
+                  text-align: right;
+
+                  span {
+                    color: $primary-red;
+                    font-weight: 700;
+                  }
+
+                  @include respond-to("mobile-xs") {
+                    text-align: center;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &.flip-flex-direction {
+          flex-direction: row-reverse;
+
+          .menu-details {
+            @include respond-to("tablet") {
+              transform: scale(0.8);
+              transform-origin: right center;
+            }
+          }
+
+          @include respond-to("mobile-xs") {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}

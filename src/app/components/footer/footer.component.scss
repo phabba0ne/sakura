@@ -1,15 +1,91 @@
-.footer {
-  width: 100%;
-  height: auto;
-  padding: 2rem;
+@use "../../shared/styles/variables" as *;
+@use "../../shared/styles/mixins" as *;
+@use "sass:map";
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+:host {
+  footer {
+    background: linear-gradient(
+      135deg,
+      $bg-dark 0%,
+      lighten($bg-dark, 10%) 100%
+    );
+    min-height: auto;
+    width: 100%;
 
-  background: lightcoral;
+    .content {
+      @include flex-center(row, space-between);
+      gap: map.get($spacing, "lg");
+      height: 144px;
+      padding: map.get($spacing, "xxl") map.get($spacing, "massive");
 
-  &__text {
-    font-size: 1rem;
+      @include respond-to("tablet") {
+        @include flex-center(column, center);
+        text-align: center;
+        gap: map.get($spacing, "xl");
+        height: auto;
+        padding: map.get($spacing, "xxl") map.get($spacing, "sm");
+      }
+
+      .logo-section {
+        @include flex-center;
+
+        #logo-mit-text {
+          height: 44px;
+          width: auto;
+
+          @include respond-to("tablet") {
+            display: none;
+          }
+        }
+
+        #logo {
+          display: none;
+
+          @include respond-to("tablet") {
+            display: block;
+            width: 44px;
+            height: 44px;
+          }
+
+          @include respond-to("mobile-xs") {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+
+      .social-links {
+        @include flex-center;
+        gap: map.get($spacing, "md");
+
+        @include respond-to("tablet") {
+          gap: map.get($spacing, "sm");
+        }
+
+        a {
+          @include flex-center;
+          padding: map.get($spacing, "xs");
+          border-radius: 12px;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px) scale(1.05);
+          }
+
+          .share-link-pic {
+            width: 40px;
+            height: 40px;
+
+            @include respond-to("mobile-xs") {
+              width: 36px;
+              height: 36px;
+            }
+          }
+        }
+      }
+    }
   }
 }

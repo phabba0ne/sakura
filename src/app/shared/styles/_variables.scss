@@ -1,0 +1,33 @@
+$primary-red: #9f0908;
+$hover-red: #d88d98;
+$text-dark: #000000;
+$text-medium: #675e54;
+$bg-dark: #0a141e;
+$white: #ffffff;
+
+$font-raleway: "Raleway", sans-serif;
+$font-economica: "Economica", sans-serif;
+
+$breakpoints: (
+  "mobile-xs": 375px,
+  "mobile": 440px,
+  "mobile-lg": 500px,
+  "tablet-sm": 600px,
+  "tablet": 768px,
+  "tablet-lg": 800px,
+  "desktop-sm": 920px,
+  "desktop-md": 1200px,
+  "desktop-lg": 1920px,
+);
+
+$spacing: (
+  "xs": 8px,
+  "sm": 16px,
+  "md": 24px,
+  "lg": 32px,
+  "xl": 48px,
+  "xxl": 64px,
+  "xxxl": 96px,
+  "huge": 120px,
+  "massive": 160px,
+);
