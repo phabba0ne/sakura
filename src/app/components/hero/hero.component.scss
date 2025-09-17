@@ -1,0 +1,14 @@
+.hero {
+  width: 100%;
+  height: 100dvh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: lightgreen;
+
+  &__content {
+    font-size: 1.5rem;
+  }
+}
