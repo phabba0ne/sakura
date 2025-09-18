@@ -1,17 +1,184 @@
+// styles.scss (Global styles)
+
+/* CSS Reset & Base Styles */
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  position: relative;
 }
 
 html,
 body {
-  height: 100dvh;
-  width: 100%;
-  scroll-behavior: smooth;
-  font-family: sans-serif;
+  height: 100%;
 }
 
-button {
-  cursor: pointer;
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+// Import Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/* Global Typography */
+h1 {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: white;
+  font-size: calc(16px + 5.8dvw);
+
+  @media (max-width: 1440px) {
+    font-size: 96px;
+  }
+
+  @media (max-width: 820px) {
+    font-size: 60px;
+  }
+
+  @media (max-width: 790px) {
+    font-size: 55px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 50px;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 36px;
+  }
+}
+
+h2 {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #9f0908;
+  font-size: 80px;
+
+  @media (max-width: 768px) {
+    font-size: 64px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 50px;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 42px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 40px;
+  }
+}
+
+/* Global Layout */
+header,
+section,
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #000;
+}
+
+/* Content Wrapper Spacing */
+section {
+  .content {
+    width: 100%;
+
+    @media (max-width: 1920px) {
+      padding: 0 160px;
+    }
+
+    @media (max-width: 1200px) {
+      padding: 0 24px;
+    }
+
+    @media (max-width: 714px) {
+      padding: 0 16px;
+    }
+  }
+}
+
+/* Component-specific global adjustments */
+app-how-to-order {
+  .how-to-order-section {
+    .content {
+      padding-bottom: 120px;
+
+      @media (max-width: 768px) {
+        padding-bottom: 96px;
+      }
+
+      @media (max-width: 320px) {
+        padding-bottom: 72px;
+      }
+
+      h2 {
+        @media (max-width: 1920px) {
+          padding: 120px 0 64px 0;
+        }
+
+        @media (max-width: 800px) {
+          padding: 96px 0 48px 0;
+        }
+
+        @media (max-width: 500px) {
+          padding: 72px 0 40px 0;
+        }
+      }
+    }
+  }
+}
+
+app-menu {
+  .menu-section {
+    .content {
+      padding-bottom: 120px;
+
+      @media (max-width: 768px) {
+        padding-bottom: 72px;
+      }
+
+      @media (max-width: 320px) {
+        padding-bottom: 0;
+      }
+
+      h2 {
+        margin-top: 120px;
+
+        @media (max-width: 768px) {
+          margin-top: 0;
+          margin-bottom: 16px;
+        }
+
+        @media (max-width: 320px) {
+          margin-top: 0;
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}
+
+app-location {
+  .find-us-at-section {
+    padding-top: 120px;
+
+    @media (max-width: 768px) {
+      padding-top: 96px;
+    }
+
+    @media (max-width: 320px) {
+      padding-top: 72px;
+    }
+  }
 }

@@ -1,0 +1,198 @@
+// menu.component.scss
+:host {
+  .menu-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #000;
+    background-image: url("/assets/images/section_our_menu_bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+      padding-bottom: 120px;
+
+      @media (max-width: 1920px) {
+        padding: 0 160px;
+        padding-bottom: 120px;
+      }
+
+      @media (max-width: 1200px) {
+        padding: 0 24px;
+        padding-bottom: 120px;
+      }
+
+      @media (max-width: 768px) {
+        gap: 32px;
+        margin: 96px 0;
+        padding: 0 16px;
+        padding-bottom: 72px;
+      }
+
+      @media (max-width: 490px) {
+        align-items: center;
+        margin: 72px 0;
+      }
+
+      @media (max-width: 320px) {
+        padding: 0 16px;
+        padding-bottom: 0;
+      }
+
+      h2 {
+        text-align: center;
+        font-family: "Raleway", sans-serif;
+        font-weight: bold;
+        font-style: normal;
+        color: #9f0908;
+        font-size: 80px;
+        margin-top: 120px;
+
+        @media (max-width: 768px) {
+          margin-top: 0;
+          margin-bottom: 16px;
+          font-size: 64px;
+        }
+
+        @media (max-width: 600px) {
+          font-size: 50px;
+        }
+
+        @media (max-width: 440px) {
+          font-size: 42px;
+        }
+
+        @media (max-width: 320px) {
+          margin-top: 0;
+          margin-bottom: 8px;
+          font-size: 40px;
+        }
+      }
+
+      .menu-item {
+        display: flex;
+        justify-content: flex-start;
+        gap: 80px;
+
+        @media (max-width: 768px) {
+          gap: 24px;
+        }
+
+        @media (max-width: 490px) {
+          gap: 16px;
+        }
+
+        @media (max-width: 320px) {
+          flex-direction: column;
+          gap: 24px;
+        }
+
+        &.flip-flex-direction {
+          flex-direction: row-reverse;
+
+          @media (max-width: 320px) {
+            flex-direction: column;
+          }
+        }
+
+        img {
+          width: 352px;
+          height: 352px;
+
+          @media (max-width: 714px) {
+            width: 300px;
+            height: 300px;
+          }
+
+          @media (max-width: 632px) {
+            width: 250px;
+            height: 250px;
+          }
+
+          @media (max-width: 582px) {
+            width: 200px;
+            height: 200px;
+          }
+
+          @media (max-width: 532px) {
+            width: 180px;
+            height: 180px;
+          }
+
+          @media (max-width: 512px) {
+            width: 160px;
+            height: 160px;
+          }
+
+          @media (max-width: 320px) {
+            width: 340px;
+            height: 340px;
+          }
+        }
+
+        .menu-details {
+          display: flex;
+          align-items: center;
+
+          @media (max-width: 320px) {
+            justify-content: center;
+          }
+
+          table {
+            @media (max-width: 768px) {
+              width: 100%;
+              justify-content: space-around;
+              text-align: space-between;
+            }
+
+            @media (max-width: 490px) {
+              text-align: justify;
+            }
+
+            th {
+              column-span: 2;
+              text-align: left;
+              font-family: "Economica", sans-serif;
+              font-weight: 700;
+              font-style: bold;
+              font-size: 56px;
+              color: #000000;
+              padding-bottom: 16px;
+
+              @media (max-width: 1200px) {
+                font-size: 32px;
+              }
+
+              @media (max-width: 768px) {
+                font-size: 32px;
+              }
+
+              @media (max-width: 320px) {
+                font-size: 24px;
+              }
+            }
+
+            tr {
+              padding-bottom: 8px;
+
+              td {
+                span {
+                  font-family: "Raleway", sans-serif;
+                  font-weight: bold;
+                  font-style: normal;
+                  font-size: 24px;
+                  color: #675e54;
+                  padding-top: 8px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

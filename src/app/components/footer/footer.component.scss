@@ -89,3 +89,111 @@
     }
   }
 }
+// footer.component.scss
+:host {
+  footer {
+    background: linear-gradient(
+      135deg,
+      #0a141e 0%,
+      rgb(22.75, 45.5, 68.25) 100%
+    );
+    min-height: auto;
+    width: 100%;
+    top: 14px;
+
+    @media (max-width: 1420px) {
+      top: 0;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+      height: 144px;
+      padding: 64px 160px;
+
+      @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 48px;
+        height: auto;
+        padding: 64px 16px;
+      }
+
+      .logo-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        #logo-mit-text {
+          height: 44px;
+          width: auto;
+
+          @media (max-width: 768px) {
+            display: none;
+          }
+        }
+
+        #logo {
+          display: none;
+
+          @media (max-width: 768px) {
+            display: block;
+            width: 44px;
+            height: 44px;
+          }
+
+          @media (max-width: 320px) {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+
+      .social-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+
+        @media (max-width: 768px) {
+          gap: 16px;
+        }
+
+        a {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          padding: 8px;
+          border-radius: 12px;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px) scale(1.05);
+          }
+
+          .share-link-pic {
+            width: 40px;
+            height: 40px;
+
+            @media (max-width: 320px) {
+              width: 36px;
+              height: 36px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
