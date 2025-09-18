@@ -29,7 +29,8 @@ export class LocationComponent {
   mapUrl: SafeResourceUrl;
 
   constructor(private sanitizer: DomSanitizer) {
-    const url = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!...'; // volle URL hier einfügen
+    const url =
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2663.2109956986274!2d11.558694776809554!3d48.125454252004666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479ddf44cf7e4d5f%3A0x55a7bd29a73e9161!2sKapuzinerstra%C3%9Fe%2031%2C%2080337%20M%C3%BCnchen!5e0!3m2!1sen!2sde!4v1749189400655!5m2!1sen!2sde'; // volle URL hier einfügen
     this.mapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 }
